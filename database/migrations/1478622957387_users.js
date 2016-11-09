@@ -8,7 +8,7 @@ class UsersTableSchema extends Schema {
     this.create('users', (table) => {
       table.increments()
       table.timestamps()
-      table.string('name')
+      table.string('name').varchar()
       table.string('email').unique()
     })
   }
