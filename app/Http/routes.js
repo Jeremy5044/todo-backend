@@ -19,3 +19,14 @@ const Route = use('Route')
 
 Route.on('/').render('welcome')
 Route.get('/example', 'TodoListController.example')
+
+Route.post('/users','UserController.create')
+Route.get('users:id','UserController.show')
+
+Route.post('/users/:id/todo-lists','TodoListController.create')
+Route.get('/users/:id/todo-lists', 'TodoListController.showList')
+
+Route.post('/users/:id/todo-lists/:listId/task','TaskController.create')
+Route.delete('/users/:id/todo-lists/:listId/task/:taskId','TaskController.delete')
+Route.put('/users/:id?todo-lists/:listId/task/:taskId','TaskController.update')
+Route.get('/users/:id/todo-lists/:listId/task','TaskController.getAll')
